@@ -1,0 +1,4 @@
+furo
+nbsphinx
+myst-parser
+sphinxcontrib.bibtex
