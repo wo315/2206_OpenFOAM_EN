@@ -1,0 +1,635 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="English" href="English.html" />
+
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+        <title>中文 - OpenFOAM_Training 2206 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">OpenFOAM_Training 2206 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">OpenFOAM_Training 2206 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="English.html">English</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">中文</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="section" id="id1">
+<h1>中文<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>大纲以及相关内容还在修改过程中</p>
+</div>
+<div class="section" id="openfoamcfd">
+<h2>2206 基于OpenFOAM®开源软件的CFD入门课<a class="headerlink" href="#openfoamcfd" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="id2">
+<h2>课程引言<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>使用计算流体力学(CFD)理论，结合现代计算机硬件以及编程语言(C++，Fortran)，对普遍存在的流动、传热等自然现象进行数值模拟，已成显学。因此许多同学也想较好的掌握CFD理论，更好的服务科研生产工作。但是由于CFD理论难度较大，使用商业软件很难理解其中真谛，并且商业软件版权费用昂贵一般个人用户难以承受，直到OpenFOAM软件出现。OpenFOAM是上世纪英国帝国理工学院在Linux平台使用现代C++语言开发，并于新千年开源，时至今日已衍生出诸多版本。因此种种，使用者只有具备良好的理论功底，了解Linux操作系统，掌握基础C++语法，才有可能通过OpenFOAM解决实际问题。通过自学，学习曲线较为陡峭，时间成本较大，容易导致从入门到放弃。课程目的就是希望通过十周时间解决OpenFOAM入门难的问题</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>课程想法<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>教学教学，一起努力。</p></li>
+<li><p>水平一般，还请海涵。</p></li>
+<li><p>战战兢兢，如履薄冰。</p></li>
+<li><p>课程结束，年内开源。</p></li>
+<li><p>同行监督，加油加油。</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>致谢<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>谢谢那些文献上的大神们(你们是天上的星星)，</p></li>
+<li><p>谢谢我的老师、朋友和同学们(名字太多)，</p></li>
+<li><p>谢谢我的妻子、儿子和女儿，</p></li>
+<li><p>谢谢参与培训的你们，感谢你们的信任，我们一起努力走完这十周，无论结局如何，我选择希望！</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>课程面向对象<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>研一或者大四学生，有进一步从事CFD相关工作兴趣。</p></li>
+<li><p>博一、二年级学生，今后打算从事求解器开发相关工作。</p></li>
+<li><p>从事CFD相关工作的有进一步提高需求的相关人员。</p></li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<ol class="arabic simple">
+<li><p>本课程并不涉及任何可压范畴内容</p></li>
+<li><p>本课程并不讲解任何求解器、边界条件、湍流模型等植入内容</p></li>
+<li><p>本课程持续时间10周，报名后做好时间管理</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>课程起始时间<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>2022年6月20日</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>课程周期<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>十周</p>
+</div>
+<div class="section" id="id8">
+<h3>课程安排<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>日期</p></th>
+<th class="head"><p>时间</p></th>
+<th class="head"><p>备注</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>周一</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">19:00-21:00</span></code></p></td>
+<td><p>授课</p></td>
+</tr>
+<tr class="row-odd"><td><p>周三</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">19:00-21:00</span></code></p></td>
+<td><p>授课</p></td>
+</tr>
+<tr class="row-even"><td><p>周五</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">19:00-21:00</span></code></p></td>
+<td><p>授课</p></td>
+</tr>
+<tr class="row-odd"><td><p>周日</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">19:00-21:00</span></code></p></td>
+<td><p><strong>答疑</strong></p></td>
+</tr>
+</tbody>
+</table></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<ol class="arabic simple">
+<li><p>请海外同学注意，为北京时间。</p></li>
+<li><p>为了高效沟通，后续会建立交流群。</p></li>
+<li><p>老师水平有限，只能尽力解惑。</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>课程教学内容<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>前处理，几何和网格</p></li>
+<li><p>离散方法，有限体积法</p></li>
+<li><p>矩阵求解，介绍直接法，讲解共轭梯度和多重网格。</p></li>
+<li><p>后处理，以python和paraview为主。</p></li>
+</ol>
+<p>每个单元课程都是尽可能按照这四项思路来设计，单元之间有前后递进关系</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<ol class="arabic simple">
+<li><p>课程几乎不涉及可压流动，可压缩流动与不可压缩流动的差别巨大，授课体系、求解方法也非常巨大。所以可压缩流动就是停留在名词阶段。</p></li>
+<li><p>对于复杂流动情况，本课程不涉及。比如：几何复杂、网格复杂、物理场景复杂、边界条件复杂。</p></li>
+<li><p>对于湍流，本课程仅仅调用OpenFOAM中现存的湍流模型，并不传授任何湍流相关理论。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>课程教学大纲<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<div class="section" id="linux">
+<h3>第一部分 Linux<a class="headerlink" href="#linux" title="Permalink to this headline">#</a></h3>
+<div class="section" id="id11">
+<h4>Linux操作系统安装<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Ubuntu 20.04 LTS
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>Linux文件系统<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.</span>
+<span class="go">├── bin -&gt; usr/bin</span>
+<span class="go">├── boot</span>
+<span class="go">├── cdrom</span>
+<span class="go">├── dev</span>
+<span class="go">├── etc</span>
+<span class="go">├── home</span>
+<span class="go">├── lib -&gt; usr/lib</span>
+<span class="go">├── lib32 -&gt; usr/lib32</span>
+<span class="go">├── lib64 -&gt; usr/lib64</span>
+<span class="go">├── libx32 -&gt; usr/libx32</span>
+<span class="go">├── lost+found</span>
+<span class="go">├── media</span>
+<span class="go">├── mnt</span>
+<span class="go">├── opt</span>
+<span class="go">├── proc</span>
+<span class="go">├── root</span>
+<span class="go">├── run</span>
+<span class="go">├── sbin -&gt; usr/sbin</span>
+<span class="go">├── snap</span>
+<span class="go">├── srv</span>
+<span class="go">├── swapfile</span>
+<span class="go">├── sys</span>
+<span class="go">├── tmp</span>
+<span class="go">├── usr</span>
+<span class="go">└── var</span>
+
+<span class="go">24 directories, 1 file</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h4>Linux命令行基本命令<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo
+<span class="gp">$ </span>ls
+<span class="gp">$ </span>copy
+<span class="gp">$ </span>move
+<span class="gp">$ </span>touch
+<span class="gp">$ </span>mkdir
+<span class="gp">$ </span>cat
+<span class="gp">$ </span>less
+<span class="gp">$ </span>more
+<span class="gp">$ </span>tail
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h4>Linux命令行高级命令<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>find
+<span class="gp">$ </span>grep
+<span class="gp">$ </span>sed
+<span class="gp">$ </span>awk
+</pre></div>
+</div>
+</div>
+<div class="section" id="shell">
+<h4>shell脚本语言入门<a class="headerlink" href="#shell" title="Permalink to this headline">#</a></h4>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">1.</span> 顺序
+<span class="k">2.</span> 条件
+<span class="k">3.</span> 循环
+<span class="k">4.</span> 函数
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id15">
+<h3>第二部分 基于OpenFOAM的CFD入门<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<div class="section" id="id16">
+<h4>1 引言<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="id17">
+<h4>2 流体力学控制方程与三类边界条件<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="id18">
+<h4>3 有限体积法求解, 扩散方程<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="id19">
+<h4>4 有限体积法求解, 对流-扩散方程<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="simple">
+<h4>5 有限体积法求解, 定常流动-SIMPLE算法<a class="headerlink" href="#simple" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="piso">
+<h4>6 有限体积法求解, 瞬态流动-PISO算法<a class="headerlink" href="#piso" title="Permalink to this headline">#</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>课程参考文献<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
+<p id="id21"><dl class="citation">
+<dt class="label" id="id22"><span class="brackets">1</span></dt>
+<dd><p>Hrvoje Jasak. Error analysis and estimation for the finite volume method with applications to fluid flows. Imperial College London (University of London), 1996.</p>
+</dd>
+<dt class="label" id="id23"><span class="brackets">2</span></dt>
+<dd><p>HK Versteeg and W Malalasekera. An introdution to computational fluid dynamics the finite volume method. Pearson, 2007.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets">3</span></dt>
+<dd><p>Fadl Moukalled, Luca Mangani, and Marwan Darwish. The finite volume method in computational fluid dynamics - an advanced introdution with openfoam and matlab. Springer, 2016.</p>
+</dd>
+</dl>
+</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>格式</p>
+</div>
+</div>
+<div class="section" id="id25">
+<h2>课程收费<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>原价：<strike> 10000</strike></p>
+<p>现价：6000</p>
+</div>
+</div>
+<div class="section" id="id26">
+<h2>课程奖励<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id27">
+<h3>获奖人数<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>按照人数百分比，给予5%的同学全奖，10%的同学半奖。</p>
+</div>
+</div>
+<div class="section" id="id28">
+<h3>评奖规则<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h3>
+<p>采用同行评议(peer review)的方式来进行。细则待定。</p>
+</div>
+<div class="section" id="id29">
+<h3>奖品<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h3>
+<p>征求获奖同学意见，全额退款还是购买等值的礼物，例如：一块显卡。</p>
+</div>
+</div>
+<div class="section" id="id30">
+<h2>报名总人数<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>原则上不超过：60人</p>
+</div>
+</div>
+<div class="section" id="id31">
+<h2>报名截止时间：<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>开课前一周</p>
+</div>
+</div>
+<div class="section" id="id32">
+<h2>退费规则:<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h2>
+<p>非常简单，如果你上了第一周课，在周日课程结束之前要退费，是全额退款。第二周课开始了退费就是0.9。依此类推。大体上是python中floor函数，采取向下取整。
+算法规则</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">total_fee</span> <span class="o">=</span> <span class="mi">6000</span>
+<span class="n">total_learning_time</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">learning_time</span> <span class="o">=</span> <span class="mf">1.1</span>  <span class="o">//</span> <span class="n">仅仅举例而已</span>
+
+<span class="n">refund</span> <span class="o">=</span> <span class="n">total_fee</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">learning_time</span><span class="p">)</span>  <span class="o">/</span> <span class="n">total_learning_time</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>无条件退费，不要不好意思，我并不想割韭菜，所以大家直接点，互相节约时间。</p>
+</div>
+</div>
+<div class="section" id="id33">
+<h2>退费时间：<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h2>
+<p>在课程结束后起算，一周以内一定退完。</p>
+</div>
+<div class="section" id="id34">
+<h2>发票<a class="headerlink" href="#id34" title="Permalink to this headline">#</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>所有报名同学，无论中途是否退费，该开多少发票开多少发票。哪怕你只上了一节课，也会给你开发票。</p>
+</div>
+</div>
+<div class="section" id="id35">
+<h2>联系方式<a class="headerlink" href="#id35" title="Permalink to this headline">#</a></h2>
+<p>微信：IAM315
+邮箱：yangwang206@whut.edu.cn</p>
+</div>
+<div class="section" id="id36">
+<h2>收费方式<a class="headerlink" href="#id36" title="Permalink to this headline">#</a></h2>
+<p>暂时没有对公渠道，非常抱歉！未来一定会有！</p>
+<div class="section" id="id37">
+<h3>支付宝<a class="headerlink" href="#id37" title="Permalink to this headline">#</a></h3>
+<p><img alt="image" src="_images/alipay.jpeg"/></p>
+</div>
+<div class="section" id="id38">
+<h3>微信<a class="headerlink" href="#id38" title="Permalink to this headline">#</a></h3>
+<p><img alt="image" src="_images/wechat.jpeg"/></p>
+</div>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="English.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">English</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Yang Wang
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">中文</a><ul>
+<li><a class="reference internal" href="#openfoamcfd">2206 基于OpenFOAM®开源软件的CFD入门课</a></li>
+<li><a class="reference internal" href="#id2">课程引言</a></li>
+<li><a class="reference internal" href="#id3">课程想法</a></li>
+<li><a class="reference internal" href="#id4">致谢</a></li>
+<li><a class="reference internal" href="#id5">课程面向对象</a></li>
+<li><a class="reference internal" href="#id6">课程起始时间</a></li>
+<li><a class="reference internal" href="#id7">课程周期</a><ul>
+<li><a class="reference internal" href="#id8">课程安排</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">课程教学内容</a></li>
+<li><a class="reference internal" href="#id10">课程教学大纲</a><ul>
+<li><a class="reference internal" href="#linux">第一部分 Linux</a><ul>
+<li><a class="reference internal" href="#id11">Linux操作系统安装</a></li>
+<li><a class="reference internal" href="#id12">Linux文件系统</a></li>
+<li><a class="reference internal" href="#id13">Linux命令行基本命令</a></li>
+<li><a class="reference internal" href="#id14">Linux命令行高级命令</a></li>
+<li><a class="reference internal" href="#shell">shell脚本语言入门</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">第二部分 基于OpenFOAM的CFD入门</a><ul>
+<li><a class="reference internal" href="#id16">1 引言</a></li>
+<li><a class="reference internal" href="#id17">2 流体力学控制方程与三类边界条件</a></li>
+<li><a class="reference internal" href="#id18">3 有限体积法求解, 扩散方程</a></li>
+<li><a class="reference internal" href="#id19">4 有限体积法求解, 对流-扩散方程</a></li>
+<li><a class="reference internal" href="#simple">5 有限体积法求解, 定常流动-SIMPLE算法</a></li>
+<li><a class="reference internal" href="#piso">6 有限体积法求解, 瞬态流动-PISO算法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id20">课程参考文献</a></li>
+<li><a class="reference internal" href="#id25">课程收费</a></li>
+<li><a class="reference internal" href="#id26">课程奖励</a><ul>
+<li><a class="reference internal" href="#id27">获奖人数</a></li>
+<li><a class="reference internal" href="#id28">评奖规则</a></li>
+<li><a class="reference internal" href="#id29">奖品</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id30">报名总人数</a></li>
+<li><a class="reference internal" href="#id31">报名截止时间：</a></li>
+<li><a class="reference internal" href="#id32">退费规则:</a></li>
+<li><a class="reference internal" href="#id33">退费时间：</a></li>
+<li><a class="reference internal" href="#id34">发票</a></li>
+<li><a class="reference internal" href="#id35">联系方式</a></li>
+<li><a class="reference internal" href="#id36">收费方式</a><ul>
+<li><a class="reference internal" href="#id37">支付宝</a></li>
+<li><a class="reference internal" href="#id38">微信</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    </body>
+</html>
