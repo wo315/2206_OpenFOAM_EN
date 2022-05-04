@@ -10,20 +10,19 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-#sys.path.insert(0, os.path.abspath('.'))
-import sphinx_theme_pd
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'OpenFOAM_Training'
+project = 'OpenFOAM Training'
 copyright = '2022, Yang Wang'
 author = 'Yang Wang'
 
 # The full version, including alpha/beta/rc tags
-release = '2206'
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
