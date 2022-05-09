@@ -172,7 +172,7 @@ all:
 
 
 
-## Course Fees
+## Course Fee
 
 ```{attention}
 Original price: <strike> 1499 Euro</strike>
