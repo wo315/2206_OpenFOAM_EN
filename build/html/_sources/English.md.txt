@@ -16,7 +16,7 @@ production work. However, due to the difficulty of CFD theory, it is difficult t
 the true meaning of it using commercial software, and the cost of commercial software
 copyright is too expensive for the average individual user to afford, until the emergence of
 OpenFOAM software, which was developed by Imperial College in the last century on the
-Linux platform using modern C++ language, and open source in the new millennium, and has
+Linux platform using the modern C++ language, and open source in the new millennium, and has
 been derived from many versions. Therefore, users can solve practical problems through
 OpenFOAM only if they have a good theoretical foundation, understand the Linux operating
 system, and master the basic C++ syntax. Through self-learning, the learning curve is steeper,
@@ -26,9 +26,9 @@ purpose of this course is to solve the difficult problem of getting started with
 
  
 ## The course is suitable for
-1. First year postgraduate or fourth year university students who are interested in further work
+1. First-year postgraduate or fourth-year university students who are interested in further work
 in CFD.
-2. First and second year PhD students who intend to work on solver development in the
+2. First and second year Ph.D students who intend to work on solver development in the
 future.
 3. Those who are interested in further development of CFD related work
 
@@ -37,7 +37,7 @@ future.
 ```{tip}
 June 20, 2022, Peking time
 ```
-## Course Duration
+## Course duration
 ```{tip}
 10 weeks
 ```
@@ -51,12 +51,12 @@ June 20, 2022, Peking time
 |SUN|`19:00-21:00`|**TA**|
 
 
-## Course content
-1. Pre-processing, geometry and meshing
+## Course contents
+1. Pre-processing, geometry, and meshing
 2. Discrete methods: finite volume method
-3. Sparse matrix algorithms: introduction to direct/iterative method, conjugate gradient and
+3. Sparse matrix algorithms: introduction to direct/iterative method, conjugate gradient, and
 multi grid method.
-4. Post-processing, with a focus on python and paraview.
+4. Post-processing, with a focus on python and ParaView.
 
 Each unit of the course is designed along these four lines as much as possible, with a
 progressive relationship between the units
@@ -74,7 +74,7 @@ different. So compressible flow just stays in the nomenclature stage.
 2. For complex flow cases, this course does not cover them. For example: complex geometry,
 complex mesh, complex physical scenario, complex boundary conditions
 3. For turbulence, this course only calls on the existing turbulence models in OpenFOAM and
-does not teach any turbulence related theory.
+does not teach any turbulence-related theory.
 ```
 
 ## Course Syllabus
@@ -172,7 +172,7 @@ all:
 
 
 
-## Courses Fees
+## Course Fees
 
 ```{attention}
 Original price: <strike> 1499 Euro</strike>

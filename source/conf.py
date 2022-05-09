@@ -35,13 +35,14 @@ extensions = [
     "sphinx.ext.duration",
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.autodoc",
+    'sphinx.ext.mathjax',
     "nbsphinx", # MyST-NB
     'sphinxcontrib.bibtex',
     # "sphinx.ext.autoapi",
     "sphinx.ext.autosummary",
 ]
 
-myst_enable_extensions = ["colon_fence", "deflist", "tasklist", "fieldlist",
+myst_enable_extensions = ["colon_fence", "deflist", "tasklist", "fieldlist","dollarmath",
                           "amsmath", "smartquotes", "replacements"]
 
 bibtex_bibfiles = ['refs.bib']
